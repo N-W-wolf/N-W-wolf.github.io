@@ -1,5 +1,5 @@
 ---
-title: RoboCon 四足机器人组公开文档
+title: RoboCon 四足组公开文档
 description: 面向招新、新成员学习与公开文档协作的简要资料。
 template: splash
 sidebar:

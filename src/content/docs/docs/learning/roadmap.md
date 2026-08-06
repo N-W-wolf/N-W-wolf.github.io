@@ -1,6 +1,6 @@
 ---
 title: 新成员学习路线
-description: 面向四足机器人组新成员的基础学习顺序与练习建议。
+description: 面向四足组新成员的基础学习顺序与练习建议。
 sidebar:
   order: 1
 ---

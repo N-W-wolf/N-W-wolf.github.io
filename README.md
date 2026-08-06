@@ -1,6 +1,6 @@
 # 西安交通大学西北狼战队 | RoboCon 四足组
 
-N.W.wolf RoboCon 四足机器人组官方网站，包含战队与项目展示、招新信息、RoboCon 赛季记录以及招新与学习文档。
+N.W.wolf RoboCon 四足组官方网站，包含战队与项目展示、招新信息、RoboCon 赛季记录以及招新与学习文档。
 
 站点使用 Astro + Starlight 构建，通过 GitHub Actions 部署到 GitHub Pages。
 

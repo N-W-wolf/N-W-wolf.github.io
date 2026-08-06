@@ -5,7 +5,7 @@
 export const siteConfig = {
   nameZh: '西安交通大学西北狼战队',
   nameEn: 'N.W.wolf',
-  groupName: 'RoboCon 四足机器人组',
+  groupName: 'RoboCon 四足组',
   github: 'https://github.com/N-W-wolf',
   recruitment: {
     status: '即将开放',

@@ -7,7 +7,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'N.W.wolf RoboCon 四足组文档',
-      description: '西安交通大学西北狼战队 RoboCon 四足机器人组招新、入门学习与公开文档协作资料。',
+      description: '西安交通大学西北狼战队 RoboCon 四足组招新、入门学习与公开文档协作资料。',
       favicon: '/assets/brand/nwwolf-square.svg',
       logo: {
         src: './src/assets/nwwolf.svg',

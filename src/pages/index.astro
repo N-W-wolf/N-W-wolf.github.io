@@ -1,0 +1,470 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { siteConfig } from '../config/site';
+import '../styles/global.css';
+
+const awards = [
+  {
+    code: 'OBSTACLE / TEAM 01',
+    title: '障碍赛一等奖',
+    image: '/assets/achievements/2026-obstacle-first-team-1.webp',
+  },
+  {
+    code: 'OBSTACLE / TEAM 02',
+    title: '障碍赛二等奖',
+    image: '/assets/achievements/2026-obstacle-second-team-2.webp',
+  },
+  {
+    code: 'MISSION / TEAM 01',
+    title: '任务赛三等奖',
+    image: '/assets/achievements/2026-task-third-team-1.webp',
+  },
+  {
+    code: 'MISSION / TEAM 02',
+    title: '任务赛三等奖',
+    image: '/assets/achievements/2026-task-third-team-2.webp',
+  },
+];
+
+const workflow = [
+  ['01', '平台设计', '围绕赛场任务完成结构、驱动、电气和传感器集成。'],
+  ['02', '仿真训练', '建立地形与任务环境，迭代运动策略和控制目标。'],
+  ['03', '实机部署', '完成模型转换、参数校准、通信与安全检查。'],
+  ['04', '场地联调', '在真实障碍和任务流程中发现问题并继续迭代。'],
+];
+
+const docs = [
+  ['TEAM & RECRUIT', '团队与招新', '了解四足组的工作方向、参与方式和常见问题。', '/docs/recruitment/overview/'],
+  ['LEARNING', '新成员学习路线', '从基础工具、方向选择到第一个小任务。', '/docs/learning/roadmap/'],
+  ['CONTRIBUTE', '怎样协作文档', '了解 Markdown、页面排序与 Pull Request 流程。', '/docs/collaboration/contributing/'],
+  ['TEMPLATES', '示例模板', '复制通用页面或学习笔记模板开始写作。', '/docs/collaboration/templates/'],
+];
+
+const experimentVideos = [
+  {
+    code: 'FIELD / MOBILITY 01',
+    title: '轮足机动性测试 01',
+    description: '记录轮足平台连续移动与转向表现。',
+    video: '/assets/videos/web/wheel-leg-locomotion.mp4',
+    poster: '/assets/videos/posters/wheel-leg-locomotion.webp',
+  },
+  {
+    code: 'FIELD / MOBILITY 02',
+    title: '轮足机动性测试 02',
+    description: '同类机动性测试的另一段实机记录。',
+    video: '/assets/videos/web/wheel-leg-agility.mp4',
+    poster: '/assets/videos/posters/wheel-leg-agility.webp',
+  },
+  {
+    code: 'FIELD / FLAT GROUND',
+    title: '轮足平地运动测试',
+    description: '检查平地滚动、姿态保持和基本控制响应。',
+    video: '/assets/videos/web/wheel-leg-flat-ground.mp4',
+    poster: '/assets/videos/posters/wheel-leg-flat-ground.webp',
+  },
+  {
+    code: 'FIELD / TERRAIN',
+    title: '主动越障测试',
+    description: '检查障碍接近、跨越和落地阶段的控制连续性。',
+    video: '/assets/videos/web/obstacle-crossing.mp4',
+    poster: '/assets/videos/posters/obstacle-crossing.webp',
+  },
+  {
+    code: 'FIELD / POINT-FOOT',
+    title: '点式足场地测试',
+    description: '点式足平台在比赛场地中的运动记录。',
+    video: '/assets/videos/web/competition-field-trial.mp4',
+    poster: '/assets/videos/posters/competition-field-trial.webp',
+  },
+  {
+    code: 'FIELD / STAIRS EARLY',
+    title: '楼梯测试（早期）',
+    description: '保留早期策略在连续台阶上的实机表现。',
+    video: '/assets/videos/web/stairs-early-web.mp4',
+    poster: '/assets/videos/posters/stairs-early.webp',
+  },
+  {
+    code: 'FIELD / STAIRS UPDATED',
+    title: '楼梯测试（后期）',
+    description: '记录策略调整后的连续台阶通过表现。',
+    video: '/assets/videos/web/stairs-smooth-web.mp4',
+    poster: '/assets/videos/posters/stairs-smooth.webp',
+  },
+  {
+    code: 'FIELD / RECOVERY',
+    title: '外扰恢复测试',
+    description: '观察受到外部扰动后姿态与步态的恢复过程。',
+    video: '/assets/videos/web/push-recovery-web.mp4',
+    poster: '/assets/videos/posters/push-recovery.webp',
+  },
+  {
+    code: 'FIELD / CLEARANCE',
+    title: '低姿态通行测试',
+    description: '验证本体高度调整与受限空间内的稳定运动。',
+    video: '/assets/videos/web/black-low-clearance.mp4',
+    poster: '/assets/videos/posters/black-low-clearance.webp',
+  },
+  {
+    code: 'DEPLOY / EARLY',
+    title: '实机部署测试（初期）',
+    description: '记录策略进入实机后的初期运行状态。',
+    video: '/assets/videos/web/deploy-first-web.mp4',
+    poster: '/assets/videos/posters/deploy-first.webp',
+  },
+  {
+    code: 'DEPLOY / UPDATED',
+    title: '实机部署测试（后期）',
+    description: '用于对比参数与部署流程调整后的表现。',
+    video: '/assets/videos/web/deploy-optimized-web.mp4',
+    poster: '/assets/videos/posters/deploy-optimized.webp',
+  },
+  {
+    code: 'SIMULATION / POLICY',
+    title: '策略仿真评估',
+    description: '在进入实机前检查运动策略的基本行为与边界条件。',
+    video: '/assets/videos/web/simulation-policy-evaluation.mp4',
+    poster: '/assets/videos/posters/simulation-policy-evaluation.webp',
+  },
+  {
+    code: 'SIMULATION / ROUGH TERRAIN',
+    title: '复杂地形仿真',
+    description: '在粗糙地形环境中观察策略行为与通过情况。',
+    video: '/assets/videos/web/simulation-rough-terrain.mp4',
+    poster: '/assets/videos/posters/simulation-rough-terrain.webp',
+  },
+];
+
+const simulationImages = [
+  {
+    code: 'SIM / OVERVIEW',
+    title: '地形环境总览',
+    image: '/assets/images/simulation-terrain-overview.webp',
+    width: 1760,
+    height: 1322,
+  },
+  {
+    code: 'SIM / ROUGH TERRAIN 01',
+    title: '复杂地形环境',
+    image: '/assets/images/simulation-rough-terrain-wide.webp',
+    width: 1760,
+    height: 1322,
+  },
+  {
+    code: 'SIM / ROUGH TERRAIN 02',
+    title: '复杂地形策略测试',
+    image: '/assets/images/simulation-rough-terrain.webp',
+    width: 1760,
+    height: 1322,
+  },
+  {
+    code: 'SIM / STAIRS',
+    title: '楼梯地形环境',
+    image: '/assets/images/simulation-stair-terrain.webp',
+    width: 1326,
+    height: 996,
+  },
+];
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="西安交通大学西北狼战队 RoboCon 四足机器人组：点式足与轮足平台研发、比赛记录、招新信息与学习文档。" />
+    <meta name="theme-color" content="#050505" />
+    <meta property="og:title" content="N.W.wolf RoboCon 四足机器人组" />
+    <meta property="og:description" content="点式足与轮足四足机器人平台、参赛记录与公开技术文档。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://n-w-wolf.github.io/assets/images/robocon-2026-project-poster.webp" />
+    <link rel="icon" href="/assets/brand/nwwolf-square.svg" type="image/svg+xml" />
+    <title>N.W.wolf RoboCon 四足机器人组 · 西安交通大学西北狼战队</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <SiteHeader />
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="shell hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow"><span>N.W.WOLF</span> / ROBOCON QUADRUPED GROUP</p>
+            <h1><span>四足机器人</span><br /><em>研发与参赛</em></h1>
+            <p class="hero-lead">
+              {siteConfig.nameZh} {siteConfig.groupName}，围绕点式足与轮足平台开展机械设计、仿真训练、运动控制和实机部署。
+            </p>
+            <div class="hero-actions">
+              <a class="button button-light" href="#join">加入四足组 <span>↗</span></a>
+              <a class="button button-line" href="/docs/">进入文档中心 <span>→</span></a>
+            </div>
+            <dl class="hero-facts">
+              <div><dt>2026</dt><dd>当前赛季</dd></div>
+              <div><dt>02</dt><dd>机器人平台</dd></div>
+              <div><dt>04</dt><dd>赛事奖项</dd></div>
+            </dl>
+          </div>
+
+          <figure class="poster-frame">
+            <img src="/assets/images/robocon-2026-project-poster.webp" alt="RoboCon 2026 项目海报" width="1024" height="1536" fetchpriority="high" />
+            <figcaption><span>SEASON POSTER</span><strong>RoboCon 2026 项目海报</strong></figcaption>
+          </figure>
+        </div>
+        <div class="hero-strip" aria-hidden="true">
+          <span>MECHANICAL SYSTEMS</span><i>×</i><span>LEARNING CONTROL</span><i>×</i><span>FIELD VALIDATION</span>
+        </div>
+      </section>
+
+      <section class="season section" id="season">
+        <div class="shell">
+          <header class="section-head">
+            <div><p class="section-code">01 / ROBOCON 2026</p><h2>BlackW 轮足平台<br />障碍赛测试</h2></div>
+            <p>BlackW 是本赛季障碍赛使用的轮足平台。以下为赛前综合地形实机测试，用于展示机器人在障碍场地中的运动表现。</p>
+          </header>
+
+          <div class="season-media">
+            <figure class="video-frame">
+              <video muted controls playsinline preload="metadata" poster="/assets/videos/posters/blackw-obstacle-course-trial.webp">
+                <source src="/assets/videos/web/blackw-obstacle-course-trial.mp4" type="video/mp4" />
+              </video>
+              <figcaption class="media-label"><span>FIELD / OBSTACLE COURSE</span><strong>综合地形实机测试</strong></figcaption>
+            </figure>
+            <aside class="season-note">
+              <span class="cross-mark" aria-hidden="true">×</span>
+              <p class="mono-label">WHEELED FOOT / OBSTACLE COURSE</p>
+              <h3>BlackW</h3>
+              <p>围绕轮足运动、复杂地形通过和控制策略切换开展训练与实机调试。</p>
+              <a href="#platforms">查看平台介绍 →</a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="platforms section" id="platforms">
+        <div class="shell">
+          <header class="section-head section-head-light">
+            <div><p class="section-code">02 / ROBOT PLATFORMS</p><h2>四足平台<br />点式足与轮足</h2></div>
+            <p>组内四足机器人按足端形式分为点式足与轮足。Black 和 BlackW 分别承担对应平台的控制、部署与场地验证。</p>
+          </header>
+
+          <div class="platform-grid">
+            <article class="platform-card">
+              <div class="image-frame image-contain"><img src="/assets/images/black-quadruped-platform.webp" alt="Black 四足机器人平台" width="1072" height="804" loading="lazy" /></div>
+              <div class="platform-copy"><span>01 / POINT-FOOT</span><h3>Black</h3><p>点式足四足平台，用于运动控制、复杂地形和实机部署验证，也为任务赛系统提供移动能力。</p><ul><li>POINT-FOOT</li><li>SIM2REAL</li><li>TASK BASE</li></ul></div>
+            </article>
+            <article class="platform-card platform-main">
+              <div class="image-frame"><img src="/assets/images/wheel-leg-exhibition.webp" alt="BlackW 轮足机器人展示记录" width="1448" height="1086" loading="lazy" /></div>
+              <div class="platform-copy"><span>02 / WHEEL-FOOT</span><h3>BlackW</h3><p>轮足四足平台，面向障碍赛验证快速移动、主动越障、地形适应与模式切换。</p><ul><li>WHEEL-FOOT</li><li>TERRAIN</li><li>MODE SWITCHING</li></ul></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="configurations section" id="configurations">
+        <div class="shell">
+          <header class="section-head">
+            <div><p class="section-code">03 / RESEARCH CONFIGURATION</p><h2>机械臂构型<br />建模与联调</h2></div>
+            <p>以下内容记录点式足平台搭载机械臂的研究与联调构型，用于整机建模和动作测试。</p>
+          </header>
+
+          <div class="arm-showcase">
+            <div class="arm-stack">
+              <figure class="media-image-card">
+                <img src="/assets/images/mobile-manipulation-platform.webp" alt="搭载机械臂的点式足四足机器人平台" width="1920" height="1440" loading="lazy" />
+                <figcaption><span>RESEARCH / MOBILE MANIPULATION</span><strong>机械臂实机联调构型</strong></figcaption>
+              </figure>
+              <figure class="arm-video-card">
+                <video muted controls playsinline preload="metadata" poster="/assets/videos/posters/arm-motion.webp">
+                  <source src="/assets/videos/web/arm-motion-web.mp4" type="video/mp4" />
+                </video>
+                <figcaption><span>RESEARCH / ARM MOTION</span><strong>机械臂动作联调</strong><p>记录机械臂关节动作与整机联调过程。</p></figcaption>
+              </figure>
+            </div>
+            <div class="arm-stack">
+              <div class="arm-portrait-grid">
+                <figure class="media-image-card media-image-portrait">
+                  <img src="/assets/images/mobile-manipulator-front.webp" alt="机械臂构型正面" width="1350" height="1800" loading="lazy" />
+                  <figcaption><span>FRONT</span><strong>正面记录</strong></figcaption>
+                </figure>
+                <figure class="media-image-card media-image-portrait">
+                  <img src="/assets/images/mobile-manipulator-side-20260806.webp" alt="机械臂构型侧面" width="1280" height="1706" loading="lazy" />
+                  <figcaption><span>SIDE</span><strong>侧面记录</strong></figcaption>
+                </figure>
+              </div>
+              <figure class="media-image-card">
+                <img src="/assets/images/black-arm-model.webp" alt="点式足四足机器人机械臂构型模型" width="1706" height="1280" loading="lazy" />
+                <figcaption><span>MODEL / SYSTEM INTEGRATION</span><strong>整机模型</strong></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="experiments section" id="experiments">
+        <div class="shell">
+          <header class="section-head">
+            <div><p class="section-code">04 / TEST FOOTAGE</p><h2>仿真与实机<br />测试记录</h2></div>
+            <p>不同阶段、平台和地形下的测试影像，包括强化学习训练、sim2sim以及sim2real测试。</p>
+          </header>
+
+          <div class="media-subhead"><span>SIMULATION / ENVIRONMENTS</span><strong>仿真地形记录</strong></div>
+          <div class="simulation-gallery">
+            {simulationImages.map((item) => (
+              <figure class="media-image-card media-image-dark">
+                <img src={item.image} alt={item.title} width={item.width} height={item.height} loading="lazy" />
+                <figcaption><span>{item.code}</span><strong>{item.title}</strong></figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div class="media-subhead media-subhead-videos"><span>VIDEO / FIELD & SIMULATION</span><strong>测试视频归档</strong></div>
+          <div class="video-grid">
+            {experimentVideos.map((item) => (
+              <figure class="test-video-card">
+                <video muted controls playsinline preload="metadata" poster={item.poster}>
+                  <source src={item.video} type="video/mp4" />
+                </video>
+                <figcaption><span>{item.code}</span><strong>{item.title}</strong><p>{item.description}</p></figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="workflow section">
+        <div class="shell">
+          <header class="section-head">
+            <div><p class="section-code">05 / HOW WE BUILD</p><h2>从平台设计到<br />场地验证</h2></div>
+            <p>研发不是孤立模块的拼接。结构、电控、控制、仿真和测试通过实机反馈共同迭代。</p>
+          </header>
+          <ol class="workflow-list">
+            {workflow.map(([code, title, description]) => (
+              <li><span>{code}</span><h3>{title}</h3><p>{description}</p><i aria-hidden="true">↘</i></li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section class="achievements section" id="achievements">
+        <div class="shell">
+          <header class="section-head section-head-light">
+            <div><p class="section-code">06 / COMPETITION RECORD</p><h2>2026<br />比赛成绩</h2></div>
+            <p>第二十五届全国大学生机器人大赛 ROBOCON 仿生足式机器人挑战赛。</p>
+          </header>
+
+          <div class="achievement-layout">
+            <figure class="team-photo team-photo-competition">
+              <img src="/assets/achievements/robocon-team-2026.webp" alt="西安交通大学RoboCon战队在 RoboCon 2026 赛场合照" width="1920" height="1440" loading="lazy" />
+              <figcaption><span>ROBOCON 2026</span><strong>西安交通大学RoboCon全体队员</strong></figcaption>
+            </figure>
+            <div class="award-list">
+              {awards.map((award, index) => (
+                <button class="award-row" type="button" data-certificate={award.image} data-certificate-title={award.title}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <div><small>{award.code}</small><strong>{award.title}</strong></div>
+                  <i aria-hidden="true">查看证书 ↗</i>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <dialog class="certificate-dialog" data-certificate-dialog>
+        <button type="button" aria-label="关闭证书" data-dialog-close>关闭 ×</button>
+        <figure><img src="" alt="" data-dialog-image /><figcaption data-dialog-title></figcaption></figure>
+      </dialog>
+
+      <section class="team section" id="team">
+        <div class="shell team-layout">
+          <figure class="team-photo team-photo-group">
+            <img src="/assets/achievements/quadruped-team-2026.webp" alt="西北狼战队 RoboCon 四足组成员与机器人合照" width="1920" height="1440" loading="lazy" />
+            <figcaption><span>ROBOCON QUADRUPED GROUP</span><strong>RoboCon 四足组成员与参赛平台</strong></figcaption>
+          </figure>
+          <div class="team-copy">
+            <p class="section-code">07 / THE TEAM</p>
+            <h2>团队与<br />工作内容</h2>
+            <p>四足组的工作覆盖机构与电气集成、运动控制、仿真训练、感知定位和场地调试。新成员可根据实际任务参与学习、测试和维护。</p>
+            <div class="team-tags"><span>MECHANISM</span><span>EMBEDDED</span><span>CONTROL</span><span>SIMULATION</span><span>FIELD TEST</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="docs-hub section" id="docs">
+        <div class="shell">
+          <header class="section-head section-head-light">
+            <div><p class="section-code">08 / OPEN DOCUMENTATION</p><h2>招新与<br />学习文档</h2></div>
+            <p>文档中心只保留团队介绍、新成员学习路线、示例模板和 Markdown 协作说明，不记录队内详细资产。</p>
+          </header>
+          <div class="doc-grid">
+            {docs.map(([code, title, description, href], index) => (
+              <a class="doc-card" href={href}><span>{code}</span><strong>{title}</strong><p>{description}</p><i>{String(index + 1).padStart(2, '0')} ↗</i></a>
+            ))}
+          </div>
+          <a class="docs-all-link" href="/docs/">浏览全部公开文档 <span>→</span></a>
+        </div>
+      </section>
+
+      <section class="join section" id="join">
+        <div class="shell join-card">
+          <div>
+            <p class="section-code">09 / JOIN N.W.WOLF</p>
+            <h2>加入四足<br />机器人组</h2>
+            <p>参与点式足与轮足四足机器人的平台研发、仿真控制和实机调试。招募方向暂不细分，我们更关注好奇心、行动力和持续投入。</p>
+          </div>
+          <dl class="join-info">
+            <div><dt>招新状态</dt><dd>{siteConfig.recruitment.status}</dd></div>
+            <div><dt>时间</dt><dd>{siteConfig.recruitment.period}</dd></div>
+            <div><dt>{siteConfig.recruitment.contactLabel}</dt><dd>{siteConfig.recruitment.contactValue}</dd></div>
+            <div class="join-note"><dt>信息维护</dt><dd>后续在 <code>src/config/site.ts</code> 中统一修改</dd></div>
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <SiteFooter />
+
+    <script>
+      const dialog = document.querySelector('[data-certificate-dialog]');
+      const dialogImage = document.querySelector('[data-dialog-image]');
+      const dialogTitle = document.querySelector('[data-dialog-title]');
+
+      document.querySelectorAll('[data-certificate]').forEach((button) => {
+        button.addEventListener('click', () => {
+          if (!(dialog instanceof HTMLDialogElement) || !(button instanceof HTMLElement)) return;
+          const image = button.dataset.certificate;
+          const title = button.dataset.certificateTitle || '获奖证书';
+          if (dialogImage instanceof HTMLImageElement && image) {
+            dialogImage.src = image;
+            dialogImage.alt = title;
+          }
+          if (dialogTitle) dialogTitle.textContent = title;
+          dialog.showModal();
+        });
+      });
+
+      document.querySelector('[data-dialog-close]')?.addEventListener('click', () => {
+        if (dialog instanceof HTMLDialogElement) dialog.close();
+      });
+
+      dialog?.addEventListener('click', (event) => {
+        if (event.target === dialog && dialog instanceof HTMLDialogElement) dialog.close();
+      });
+
+      const videos = document.querySelectorAll('video');
+      videos.forEach((video) => {
+        video.defaultMuted = true;
+        video.muted = true;
+        video.volume = 0;
+        video.addEventListener('volumechange', () => {
+          if (!video.muted || video.volume !== 0) {
+            video.muted = true;
+            video.volume = 0;
+          }
+        });
+        video.addEventListener('play', () => videos.forEach((other) => other !== video && other.pause()));
+      });
+    </script>
+  </body>
+</html>

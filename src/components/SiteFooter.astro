@@ -1,0 +1,23 @@
+---
+import { siteConfig } from '../config/site';
+---
+
+<footer class="site-footer">
+  <div class="shell footer-lead">
+    <img src="/assets/brand/nwwolf.svg" alt="N.W.wolf 标志" width="76" height="76" />
+    <p>
+      <strong>{siteConfig.nameEn}</strong>
+      <span>QUADRUPED ROBOTICS / ROBOCON</span>
+    </p>
+    <a href="#top">返回顶部 ↑</a>
+  </div>
+  <div class="shell footer-meta">
+    <span>{siteConfig.nameZh} · {siteConfig.groupName}</span>
+    <span>© <span data-current-year>2026</span> N.W.wolf</span>
+  </div>
+</footer>
+
+<script>
+  const year = document.querySelector('[data-current-year]');
+  if (year) year.textContent = String(new Date().getFullYear());
+</script>

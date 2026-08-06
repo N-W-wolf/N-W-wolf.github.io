@@ -1,0 +1,54 @@
+---
+import { siteConfig } from '../config/site';
+
+const links = [
+  { href: '#season', label: '赛季' },
+  { href: '#platforms', label: '平台' },
+  { href: '#experiments', label: '影像' },
+  { href: '#achievements', label: '成绩' },
+  { href: '#team', label: '团队' },
+  { href: '/docs/', label: '文档' },
+];
+---
+
+<header class="site-header" data-site-header>
+  <div class="shell header-inner">
+    <a class="brand" href="/" aria-label={`${siteConfig.nameZh}首页`}>
+      <img src="/assets/brand/nwwolf.svg" alt="" width="44" height="44" />
+      <span>
+        <strong>{siteConfig.nameEn}</strong>
+        <small>{siteConfig.groupName}</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-menu-toggle>
+      <span></span><span></span>
+      <span class="sr-only">打开导航</span>
+    </button>
+
+    <nav class="main-nav" id="main-nav" aria-label="主导航" data-main-nav>
+      {links.map((link) => <a href={link.href}>{link.label}</a>)}
+      <a class="nav-join" href="#join">加入我们</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('[data-site-header]');
+  const toggle = document.querySelector('[data-menu-toggle]');
+  const nav = document.querySelector('[data-main-nav]');
+
+  const closeMenu = () => {
+    toggle?.setAttribute('aria-expanded', 'false');
+    nav?.classList.remove('is-open');
+  };
+
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open));
+    nav?.classList.toggle('is-open', open);
+  });
+
+  nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  window.addEventListener('scroll', () => header?.classList.toggle('is-scrolled', window.scrollY > 12), { passive: true });
+</script>

@@ -1,0 +1,6 @@
+# 请在建立 GitHub 团队后，把下面的占位项替换为真实团队或成员账号。
+# 示例：/src/content/docs/docs/recruitment/ @招新负责人用户名
+# 示例：/src/content/docs/docs/learning/ @新人培养负责人用户名
+# 示例：/src/content/docs/docs/collaboration/ @文档维护负责人用户名
+
+# 当前先保留为协作模板，避免配置不存在的审核账号导致 CODEOWNERS 失效。

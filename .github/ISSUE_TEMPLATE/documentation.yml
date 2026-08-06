@@ -1,0 +1,38 @@
+name: 文档问题或补充
+description: 报告招新、学习或协作文档中的错误并提出补充建议
+title: "[Docs] "
+labels: [documentation]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: 文档页面
+      description: 请填写页面链接或仓库内文件路径。
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: 问题类型
+      options:
+        - 内容错误
+        - 步骤无法复现
+        - 内容已经过期
+        - 缺少重要说明
+        - 建议新增文档
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 具体情况
+      description: 请说明哪里不清楚、内容为何需要修改，以及建议的表达或资料。
+    validations:
+      required: true
+  - type: checkboxes
+    id: public
+    attributes:
+      label: 公开信息确认
+      options:
+        - label: 本问题不包含密码、个人隐私或未公开竞赛策略。
+          required: true

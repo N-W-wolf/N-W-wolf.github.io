@@ -1,0 +1,13 @@
+.agents/
+
+.codex
+
+.vscode/
+
+node_modules/
+dist/
+.astro/
+
+# Local high-resolution source media. Web-ready derivatives live in
+# assets/images and assets/videos/web.
+assets/originals/

@@ -31,12 +31,22 @@ const links = [
       <a class="nav-join" href="#join">加入我们</a>
     </nav>
   </div>
+  <div class="scroll-progress" aria-hidden="true">
+    <span data-scroll-progress></span>
+  </div>
 </header>
 
 <script>
   const header = document.querySelector('[data-site-header]');
   const toggle = document.querySelector('[data-menu-toggle]');
   const nav = document.querySelector('[data-main-nav]');
+  const progress = document.querySelector('[data-scroll-progress]');
+  const sectionLinks = Array.from(
+    document.querySelectorAll<HTMLAnchorElement>('.main-nav a[href^="#"]')
+  )
+    .map((link) => ({ link, section: document.getElementById(link.hash.slice(1)) }))
+    .filter((item) => item.section);
+  let scrollFrame = 0;
 
   const closeMenu = () => {
     toggle?.setAttribute('aria-expanded', 'false');
@@ -50,5 +60,34 @@ const links = [
   });
 
   nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
-  window.addEventListener('scroll', () => header?.classList.toggle('is-scrolled', window.scrollY > 12), { passive: true });
+
+  const updateScrollState = () => {
+    scrollFrame = 0;
+    const scrollTop = window.scrollY;
+    header?.classList.toggle('is-scrolled', scrollTop > 12);
+
+    const scrollRange = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollRatio = scrollRange > 0 ? Math.min(Math.max(scrollTop / scrollRange, 0), 1) : 0;
+    if (progress instanceof HTMLElement) {
+      progress.style.setProperty('--scroll-progress', String(scrollRatio));
+    }
+
+    const activationLine = scrollTop + window.innerHeight * 0.38;
+    let activeId = '';
+    sectionLinks.forEach(({ link, section }) => {
+      if (section && section.offsetTop <= activationLine) activeId = link.hash.slice(1);
+    });
+    sectionLinks.forEach(({ link }) => {
+      link.classList.toggle('is-active', link.hash === `#${activeId}`);
+    });
+  };
+
+  const requestScrollUpdate = () => {
+    if (scrollFrame) return;
+    scrollFrame = window.requestAnimationFrame(updateScrollState);
+  };
+
+  window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+  window.addEventListener('resize', requestScrollUpdate, { passive: true });
+  updateScrollState();
 </script>

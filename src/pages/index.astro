@@ -165,6 +165,9 @@ const simulationImages = [
     height: 996,
   },
 ];
+
+const canonicalUrl = new URL('/', Astro.site ?? 'https://n-w-wolf.github.io');
+const openGraphImageUrl = new URL('/assets/images/robocon-2026-project-poster.webp', canonicalUrl);
 ---
 
 <!doctype html>
@@ -177,7 +180,9 @@ const simulationImages = [
     <meta property="og:title" content="N.W.wolf RoboCon 四足组" />
     <meta property="og:description" content="点式足与轮足四足机器人平台、参赛记录与公开技术文档。" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://n-w-wolf.github.io/assets/images/robocon-2026-project-poster.webp" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={openGraphImageUrl} />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" href="/assets/brand/nwwolf-square.svg" type="image/svg+xml" />
     <title>N.W.wolf RoboCon 四足组 · 西安交通大学西北狼战队</title>
   </head>

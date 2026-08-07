@@ -68,3 +68,22 @@ src/config/site.ts
 ## GitHub Pages 部署
 
 仓库已提供 `.github/workflows/deploy.yml`。首次启用时，在 GitHub 仓库的 **Settings → Pages → Build and deployment** 中将 Source 设为 **GitHub Actions**。此后推送到 `main` 会自动检查并部署 `dist/`。
+
+## Vercel 同步部署
+
+在 Vercel 中导入 `N-W-wolf/N-W-wolf.github.io`，使用以下构建配置：
+
+- Framework Preset：`Astro`
+- Production Branch：`main`
+- Install Command：`npm ci`
+- Build Command：`npm run build`
+- Output Directory：`dist`
+- Node.js Version：`22.x`
+
+在 Vercel 项目的 Production 环境中添加：
+
+```text
+SITE_URL=https://nwwolf.top
+```
+
+`SITE_URL` 用于生成 sitemap、canonical 和 Open Graph 地址；它不会自动完成域名绑定。正式启用前，还需要在 Vercel 的 Domains 页面添加 `nwwolf.top`，并按提示配置 DNS。未设置该变量时，构建默认使用 `https://n-w-wolf.github.io`。

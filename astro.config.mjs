@@ -2,8 +2,10 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
 
+const siteUrl = process.env.SITE_URL?.trim() || 'https://n-w-wolf.github.io';
+
 export default defineConfig({
-  site: 'https://n-w-wolf.github.io',
+  site: siteUrl,
   integrations: [
     starlight({
       title: 'N.W.wolf RoboCon 四足组文档',

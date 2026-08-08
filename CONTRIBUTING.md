@@ -17,10 +17,11 @@
 | 内容 | 目录 |
 | --- | --- |
 | 团队与招新 | `src/content/docs/docs/recruitment/` |
+| 关于四足机器人、关于 RoboCon | `src/content/docs/docs/about-quadruped.md`、`src/content/docs/docs/about-robocon.md` |
 | 入门学习 | `src/content/docs/docs/learning/` |
 | 文档协作与模板 | `src/content/docs/docs/collaboration/` |
 
-分类在侧边栏中的顺序由 `astro.config.mjs` 决定。同一分类内的页面顺序由 Markdown 头部的 `sidebar.order` 决定，数字越小越靠前。
+分类和顶层介绍页在侧边栏中的顺序由 `astro.config.mjs` 决定。同一分类内的页面顺序由 Markdown 头部的 `sidebar.order` 决定，数字越小越靠前。招新初期实际采用的阅读材料集中记录在 `src/content/docs/docs/learning/training-index.md`，由培训维护者按当期安排手动添加链接。
 
 ## 内容要求
 
@@ -33,6 +34,5 @@
 ## 模板
 
 - 通用页面：`templates/docs/page-template.md`
-- 学习笔记：`templates/docs/learning-note-template.md`
 
 复制模板后，请删除其中的提示文字和不适用章节。

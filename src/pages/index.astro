@@ -36,9 +36,9 @@ const workflow = [
 
 const docs = [
   ['TEAM & RECRUIT', '团队与招新', '了解四足组的工作方向、参与方式和常见问题。', '/docs/recruitment/overview/'],
-  ['LEARNING', '新成员学习路线', '从基础工具、方向选择到第一个小任务。', '/docs/learning/roadmap/'],
-  ['CONTRIBUTE', '怎样协作文档', '了解 Markdown、页面排序与 Pull Request 流程。', '/docs/collaboration/contributing/'],
-  ['TEMPLATES', '示例模板', '复制通用页面或学习笔记模板开始写作。', '/docs/collaboration/templates/'],
+  ['LEARNING', '入门学习', '从入门概览开始，了解四足组的软件技术范围和各学习目录。', '/docs/learning/learning-overview/'],
+  ['QUADRUPED', '关于四足机器人', '认识四足机器人的基本构型、系统组成、控制问题与发展方向。', '/docs/about-quadruped/'],
+  ['ROBOCON', '关于 RoboCon', '了解 RoboCon、足式机器人赛项及比赛项目的工程特点。', '/docs/about-robocon/'],
 ];
 
 const experimentVideos = [
@@ -408,7 +408,7 @@ const openGraphImageUrl = new URL('/assets/images/robocon-2026-project-poster.we
         <div class="shell">
           <header class="section-head section-head-light">
             <div><p class="section-code">08 / OPEN DOCUMENTATION</p><h2>招新与<br />学习文档</h2></div>
-            <p>文档中心只保留团队介绍、新成员学习路线、示例模板和 Markdown 协作说明，不记录队内详细资产。</p>
+            <p>先认识四足机器人与 RoboCon，再从入门概览进入招新培训和后续学习目录。</p>
           </header>
           <div class="doc-grid">
             {docs.map(([code, title, description, href], index) => (

@@ -9,10 +9,12 @@ export const siteConfig = {
   github: 'https://github.com/N-W-wolf',
   recruitment: {
     status: '即将开放',
-    period: '2026 年 9 月 1 日—9 月 30 日',
+    period: '待定',
     contactLabel: '招新交流群',
     contactValue: '待更新',
     applyUrl: '#join',
-    qrCode: '',
+    // 将二维码图片放入 public/assets/recruitment/ 后，在此填写以 /assets/ 开头的公开路径。
+    qrCode: '/assets/recruitment/qrcode.png',
+    showMaintenanceNote: false,
   },
 } as const;

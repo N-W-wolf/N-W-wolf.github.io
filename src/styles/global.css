@@ -1543,6 +1543,54 @@ ol {
   font-weight: 750;
 }
 
+.join-info > .join-contact.has-qr {
+  align-items: center;
+  padding-block: 24px;
+}
+
+.join-contact-content {
+  display: grid;
+  grid-template-columns: minmax(128px, 152px) minmax(0, 1fr);
+  align-items: center;
+  gap: 22px;
+}
+
+.join-qr-frame {
+  padding: 7px;
+  border: 1px solid #3a3a37;
+  border-radius: 10px;
+  background: #f5f5f2;
+  overflow: hidden;
+}
+
+.join-qr-code {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.join-contact-copy {
+  display: grid;
+  gap: 7px;
+  padding-left: 20px;
+  border-left: 1px solid #343431;
+}
+
+.join-contact-copy strong {
+  color: var(--paper);
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+
+.join-contact-copy span {
+  color: #b5b5b0;
+  font-size: 12px;
+  font-weight: 500;
+}
+
 .join-info .join-note dd {
   color: #858581;
   font-size: 11px;

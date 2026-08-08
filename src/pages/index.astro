@@ -429,8 +429,34 @@ const openGraphImageUrl = new URL('/assets/images/robocon-2026-project-poster.we
           <dl class="join-info">
             <div><dt>招新状态</dt><dd>{siteConfig.recruitment.status}</dd></div>
             <div><dt>时间</dt><dd>{siteConfig.recruitment.period}</dd></div>
-            <div><dt>{siteConfig.recruitment.contactLabel}</dt><dd>{siteConfig.recruitment.contactValue}</dd></div>
-            <div class="join-note"><dt>信息维护</dt><dd>后续在 <code>src/config/site.ts</code> 中统一修改</dd></div>
+            <div class:list={['join-contact', { 'has-qr': siteConfig.recruitment.qrCode }]}>
+              <dt>{siteConfig.recruitment.contactLabel}</dt>
+              <dd>
+                {siteConfig.recruitment.qrCode ? (
+                  <div class="join-contact-content">
+                    <div class="join-qr-frame">
+                      <img
+                        class="join-qr-code"
+                        src={siteConfig.recruitment.qrCode}
+                        alt={`${siteConfig.recruitment.contactLabel}二维码`}
+                        width="152"
+                        height="152"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="join-contact-copy">
+                      <strong>扫码加入</strong>
+                      {siteConfig.recruitment.contactValue !== '待更新' && (
+                        <span>{siteConfig.recruitment.contactValue}</span>
+                      )}
+                    </div>
+                  </div>
+                ) : siteConfig.recruitment.contactValue}
+              </dd>
+            </div>
+            {siteConfig.recruitment.showMaintenanceNote && (
+              <div class="join-note"><dt>信息维护</dt><dd>后续在 <code>src/config/site.ts</code> 中统一修改</dd></div>
+            )}
           </dl>
         </div>
       </section>

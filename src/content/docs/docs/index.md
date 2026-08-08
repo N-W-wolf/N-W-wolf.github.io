@@ -5,18 +5,21 @@ template: splash
 sidebar:
   order: 1
 hero:
-  tagline: 先认识四足机器人与 RoboCon，再进入四足组的招新培训和入门学习目录。
+  tagline: 认识四足机器人与 RoboCon，进入四足组的招新培训和入门学习目录。
   actions:
     - text: 关于四足机器人
       link: /docs/about-quadruped/
       icon: right-arrow
     - text: 关于 RoboCon
       link: /docs/about-robocon/
-      variant: minimal
-      icon: information
+      icon: right-arrow
+    - text: 了解团队与招新
+      link: /docs/recruitment/overview/
+      variant: secondary
+      icon: right-arrow
     - text: 进入入门学习
       link: /docs/learning/learning-overview/
-      variant: minimal
+      variant: secondary
       icon: open-book
 ---
 

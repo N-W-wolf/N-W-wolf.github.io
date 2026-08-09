@@ -10,7 +10,7 @@ sidebar:
 ## 章节
 
 - [Linux 系统及其操作](/docs/learning/01-development-foundations/linux-system/)：从安装 Ubuntu 22.04 双系统开始，逐步掌握终端、文件系统与权限。
-- [Git/GitHub](/docs/learning/01-development-foundations/git-github/)：学习 Git 基础命令与 GitHub 协作流程（内容待补充）。
+- [Git/GitHub](/docs/learning/01-development-foundations/git-github/)：学习 Git 基础命令、分支、远程推送与 Pull Request 协作流程。
 - [Python/C++ 概念](/docs/learning/01-development-foundations/python-cpp/)：了解机器人开发中常用的编程语言基础概念（内容待补充）。
 - [计算机网络及 SSH](/docs/learning/01-development-foundations/networking-ssh/)：学习基础网络概念与 SSH 远程连接（内容待补充）。
 

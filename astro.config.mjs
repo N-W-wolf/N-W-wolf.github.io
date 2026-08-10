@@ -75,7 +75,7 @@ export default defineConfig({
           items: [{ autogenerate: { directory: 'docs/recruitment' } }],
         },
         { label: '关于四足机器人', link: '/docs/about-quadruped/' },
-        { label: '关于 ROBOCON', link: '/docs/about-ROBOCON/' },
+        { label: '关于 ROBOCON', link: '/docs/about-robocon/' },
         {
           label: '入门学习',
           items: [

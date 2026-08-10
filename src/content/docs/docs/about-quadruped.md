@@ -384,5 +384,5 @@ Boston Dynamics 在 2015 年公开 Spot Classic，并在后续发展出面向工
 
 ### ROBOCON 与工程资料
 
-- [ROBOCON 2026 足式机器人赛道规则 V2.0](/assets/documents/ROBOCON-2026-rules-v2.pdf).
+- [ROBOCON 2026 足式机器人赛道规则 V2.0](/assets/documents/robocon-2026-rules-v2.pdf).
 - [LocoWiki](https://github.com/LocoWiki/LocoWiki)：可作为 ROBOCON 足式机器人实践经验、资料索引和进一步阅读的补充。其部分内容属于作者个人经验与观点，历史事实和技术结论仍应回到原始论文或官方资料核对。

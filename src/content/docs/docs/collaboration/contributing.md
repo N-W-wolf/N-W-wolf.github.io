@@ -11,7 +11,7 @@ sidebar:
 
 | 内容 | 目录 | 页面路径示例 |
 | --- | --- | --- |
-| 关键介绍页 | `docs/about-quadruped.md`、`docs/about-ROBOCON.md` | `/docs/about-quadruped/` |
+| 关键介绍页 | `docs/about-quadruped.md`、`docs/about-robocon.md` | `/docs/about-quadruped/` |
 | 团队与招新 | `docs/recruitment/` | `/docs/recruitment/overview/` |
 | 入门学习 | `docs/learning/` | `/docs/learning/learning-overview/` |
 | 文档协作与模板 | `docs/collaboration/` | `/docs/collaboration/contributing/` |

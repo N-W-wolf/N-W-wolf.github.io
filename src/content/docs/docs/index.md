@@ -11,7 +11,7 @@ hero:
       link: /docs/about-quadruped/
       icon: right-arrow
     - text: 关于 ROBOCON
-      link: /docs/about-ROBOCON/
+      link: /docs/about-robocon/
       icon: right-arrow
     - text: 了解团队与招新
       link: /docs/recruitment/overview/

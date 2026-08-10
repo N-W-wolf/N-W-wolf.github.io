@@ -12,7 +12,7 @@ sidebar:
 ### 基本认识
 
 - [关于四足机器人](/docs/about-quadruped/)：了解四足机器人的构型、系统组成、控制问题和发展方向。
-- [关于 ROBOCON](/docs/about-ROBOCON/)：了解 ROBOCON、足式机器人赛项和比赛项目的工程特点。
+- [关于 ROBOCON](/docs/about-robocon/)：了解 ROBOCON、足式机器人赛项和比赛项目的工程特点。
 - [入门学习概览](/docs/learning/learning-overview/)：了解四足组的软件技术范围与各学习目录的定位。
 
 ### 基础准备

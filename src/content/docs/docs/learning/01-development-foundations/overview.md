@@ -1,5 +1,5 @@
 ---
-title: 开发基础
+title: 开发基础概览
 description: 学习 Linux、Git/GitHub、Python/C++ 概念以及计算机网络与 SSH，为参与机器人软件开发打好基础。
 sidebar:
   order: 1

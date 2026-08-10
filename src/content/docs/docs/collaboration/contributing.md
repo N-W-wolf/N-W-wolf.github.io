@@ -11,7 +11,7 @@ sidebar:
 
 | 内容 | 目录 | 页面路径示例 |
 | --- | --- | --- |
-| 关键介绍页 | `docs/about-quadruped.md`、`docs/about-robocon.md` | `/docs/about-quadruped/` |
+| 关键介绍页 | `docs/about-quadruped.md`、`docs/about-ROBOCON.md` | `/docs/about-quadruped/` |
 | 团队与招新 | `docs/recruitment/` | `/docs/recruitment/overview/` |
 | 入门学习 | `docs/learning/` | `/docs/learning/learning-overview/` |
 | 文档协作与模板 | `docs/collaboration/` | `/docs/collaboration/contributing/` |
@@ -20,7 +20,7 @@ sidebar:
 
 排序功能已经启用，分为两层：
 
-1. **分类顺序**由根目录的 `astro.config.mjs` 决定。目前依次为“文档首页 → 团队与招新 → 关于四足机器人 → 关于 RoboCon → 入门学习 → 参与协作”。入门学习下的八个分组也在此文件中显式排列。
+1. **分类顺序**由根目录的 `astro.config.mjs` 决定。目前依次为“文档首页 → 团队与招新 → 关于四足机器人 → 关于 ROBOCON → 入门学习 → 参与协作”。入门学习下的八个分组也在此文件中显式排列。
 2. **各分组内页面顺序**由 Markdown 头部的 `sidebar.order` 决定，数字越小越靠前。
 
 例如：

@@ -17,7 +17,7 @@
 | 内容 | 目录 |
 | --- | --- |
 | 团队与招新 | `src/content/docs/docs/recruitment/` |
-| 关于四足机器人、关于 RoboCon | `src/content/docs/docs/about-quadruped.md`、`src/content/docs/docs/about-robocon.md` |
+| 关于四足机器人、关于 ROBOCON | `src/content/docs/docs/about-quadruped.md`、`src/content/docs/docs/about-ROBOCON.md` |
 | 入门学习 | `src/content/docs/docs/learning/` |
 | 文档协作与模板 | `src/content/docs/docs/collaboration/` |
 

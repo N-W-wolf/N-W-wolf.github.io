@@ -43,8 +43,8 @@ export default defineConfig({
   },
   integrations: [
     starlight({
-      title: 'N.W.wolf RoboCon 四足组文档',
-      description: '西安交通大学西北狼战队 RoboCon 四足组招新、入门学习与公开文档协作资料。',
+      title: 'N.W.wolf ROBOCON 四足组文档',
+      description: '西安交通大学ROBOCON四足组 西北狼战队招新、入门学习与公开文档协作资料。',
       favicon: '/assets/brand/nwwolf-square.svg',
       logo: {
         src: './src/assets/nwwolf.svg',
@@ -75,7 +75,7 @@ export default defineConfig({
           items: [{ autogenerate: { directory: 'docs/recruitment' } }],
         },
         { label: '关于四足机器人', link: '/docs/about-quadruped/' },
-        { label: '关于 RoboCon', link: '/docs/about-robocon/' },
+        { label: '关于 ROBOCON', link: '/docs/about-ROBOCON/' },
         {
           label: '入门学习',
           items: [

@@ -5,11 +5,11 @@
 export const siteConfig = {
   nameZh: '西安交通大学西北狼战队',
   nameEn: 'N.W.wolf',
-  groupName: 'RoboCon 四足组',
+  groupName: 'XJTUROBOCON 四足组',
   github: 'https://github.com/N-W-wolf',
   recruitment: {
-    status: '即将开放',
-    period: '待定',
+    status: '招新中',
+    period: '8月10日 - 待定',
     contactLabel: '招新交流群',
     contactValue: '待更新',
     applyUrl: '#join',

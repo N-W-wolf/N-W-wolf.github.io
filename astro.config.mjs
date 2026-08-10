@@ -98,7 +98,32 @@ export default defineConfig({
             {
               label: '四足强化学习与仿真',
               collapsed: true,
-              items: [{ autogenerate: { directory: 'docs/learning/04-quadruped-rl-simulation' } }],
+              items: [
+                {
+                  label: '章节概览',
+                  link: '/docs/learning/04-quadruped-rl-simulation/overview/',
+                },
+                {
+                  label: '基础理解',
+                  collapsed: true,
+                  items: [{ autogenerate: { directory: 'docs/learning/04-quadruped-rl-simulation/01-core-concepts' } }],
+                },
+                {
+                  label: '训练与仿真',
+                  collapsed: true,
+                  items: [{ autogenerate: { directory: 'docs/learning/04-quadruped-rl-simulation/02-simulation-training' } }],
+                },
+                {
+                  label: '泛化与迁移',
+                  collapsed: true,
+                  items: [{ autogenerate: { directory: 'docs/learning/04-quadruped-rl-simulation/03-generalization-transfer' } }],
+                },
+                {
+                  label: '强化学习理论进阶 *',
+                  collapsed: true,
+                  items: [{ autogenerate: { directory: 'docs/learning/04-quadruped-rl-simulation/04-advanced-theory' } }],
+                },
+              ],
             },
             {
               label: '实机部署与调试',

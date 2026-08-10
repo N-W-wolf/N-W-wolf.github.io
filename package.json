@@ -8,7 +8,8 @@
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
-    "check:links": "node scripts/check-local-links.mjs"
+    "check:links": "node scripts/check-local-links.mjs",
+    "sync:rl-theory": "node scripts/sync-rl-theory.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "7.2.2",

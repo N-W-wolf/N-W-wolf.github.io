@@ -1,8 +1,7 @@
 ---
-title: AI 与 Agent 协作
+title: AI 与 Agent 协作概览
 description: 该章节内容待后续补充。
 sidebar:
-  label: 内容占位
   order: 1
 ---
 

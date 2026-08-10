@@ -18,7 +18,7 @@ sidebar:
 ### 基础准备
 
 - [开发基础](/docs/learning/01-development-foundations/overview/)：准备 Linux、Git、编程语言和常用开发工具。
-- [AI 与 Agent 协作](/docs/learning/02-ai-agent-collaboration/overview/)：了解学习、开发和检查过程中使用 AI 与 Agent 的基本方式。
+- [AI 与 Agent 协作](/docs/learning/02-ai-agent-collaboration/ai-与-agent-协作概览/)：了解学习、开发和检查过程中使用 AI 与 Agent 的基本方式。
 
 ### 四足软件入门
 

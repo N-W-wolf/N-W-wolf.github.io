@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 420" width="1180" height="420" role="img">
+  <defs>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1180" height="420" rx="14" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- 局域网 A -->
+  <rect x="24" y="36" width="330" height="348" rx="14" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <text x="40" y="64" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="17" font-weight="700" fill="#0f172a">局域网 A（LAN）</text>
+  <text x="40" y="86" font-family="Consolas, 'SFMono-Regular', monospace" font-size="13" fill="#64748b">192.168.1.0/24</text>
+
+  <rect x="48" y="104" width="150" height="64" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="123" y="131" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="700" fill="#1d4ed8">你的电脑</text>
+  <text x="123" y="153" text-anchor="middle" font-family="Consolas, 'SFMono-Regular', monospace" font-size="13" fill="#334155">192.168.1.10</text>
+
+  <rect x="48" y="196" width="150" height="64" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="123" y="223" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="700" fill="#b45309">机器人开发板</text>
+  <text x="123" y="245" text-anchor="middle" font-family="Consolas, 'SFMono-Regular', monospace" font-size="13" fill="#334155">192.168.1.20</text>
+
+  <rect x="248" y="150" width="92" height="76" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
+  <text x="294" y="182" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="700" fill="#334155">交换机</text>
+  <text x="294" y="204" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#475569">按 MAC 转发</text>
+
+  <line x1="198" y1="136" x2="248" y2="176" stroke="#64748b" stroke-width="1.8"/>
+  <line x1="198" y1="228" x2="248" y2="200" stroke="#64748b" stroke-width="1.8"/>
+
+  <!-- 路由器 A -->
+  <rect x="396" y="150" width="118" height="76" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="455" y="180" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="700" fill="#166534">路由器 A</text>
+  <text x="455" y="202" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#475569">局域网网关</text>
+  <text x="455" y="218" text-anchor="middle" font-family="Consolas, 'SFMono-Regular', monospace" font-size="12" fill="#166534">192.168.1.1</text>
+
+  <line x1="340" y1="188" x2="396" y2="188" stroke="#64748b" stroke-width="1.8"/>
+
+  <!-- 互联网 -->
+  <rect x="556" y="134" width="210" height="108" rx="54" fill="#eef2ff" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="661" y="184" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16" font-weight="700" fill="#3730a3">互联网（Internet）</text>
+  <text x="661" y="208" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#475569">由无数网络互连而成</text>
+
+  <line x1="514" y1="188" x2="556" y2="188" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+  <line x1="766" y1="188" x2="806" y2="188" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+
+  <!-- 路由器 B -->
+  <rect x="806" y="150" width="118" height="76" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="865" y="180" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="700" fill="#166534">路由器 B</text>
+  <text x="865" y="202" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="12" fill="#475569">局域网网关</text>
+  <text x="865" y="218" text-anchor="middle" font-family="Consolas, 'SFMono-Regular', monospace" font-size="12" fill="#166534">10.0.0.1</text>
+
+  <!-- 局域网 B -->
+  <rect x="948" y="36" width="208" height="348" rx="14" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <text x="964" y="64" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="17" font-weight="700" fill="#0f172a">局域网 B（LAN）</text>
+  <text x="964" y="86" font-family="Consolas, 'SFMono-Regular', monospace" font-size="13" fill="#64748b">10.0.0.0/24</text>
+
+  <rect x="968" y="110" width="168" height="70" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="1052" y="140" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="700" fill="#b45309">服务器</text>
+  <text x="1052" y="162" text-anchor="middle" font-family="Consolas, 'SFMono-Regular', monospace" font-size="13" fill="#334155">10.0.0.10</text>
+
+  <rect x="968" y="230" width="168" height="70" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="1052" y="260" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="15" font-weight="700" fill="#1d4ed8">远程电脑</text>
+  <text x="1052" y="282" text-anchor="middle" font-family="Consolas, 'SFMono-Regular', monospace" font-size="13" fill="#334155">10.0.0.20</text>
+
+  <line x1="924" y1="188" x2="968" y2="145" stroke="#64748b" stroke-width="1.8"/>
+  <line x1="924" y1="188" x2="968" y2="265" stroke="#64748b" stroke-width="1.8"/>
+
+  <text x="590" y="412" text-anchor="middle" font-family="Inter, 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#475569">局域网内，交换机按 MAC 地址在同一网段转发；跨网络时，路由器按 IP 地址逐跳转发，把不同网络互连成互联网。</text>
+</svg>

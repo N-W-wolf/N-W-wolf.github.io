@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" role="img" aria-labelledby="title desc">
+  <title id="title">世界坐标系和机身坐标系中的速度表达</title>
+  <desc id="desc">机身相对世界旋转九十度，同一个向前速度在机身坐标系中为一零，在世界坐标系中为零一。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8z" fill="#202124"/></marker>
+    <marker id="accent-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8z" fill="#d85d32"/></marker>
+    <style>
+      .panel{fill:#f7f6f2;stroke:#c7c5bd;stroke-width:2}.axis{stroke:#202124;stroke-width:3;marker-end:url(#arrow)}.accent{stroke:#d85d32;stroke-width:6;marker-end:url(#accent-arrow)}.body{fill:#202124}.label{font-family:sans-serif;font-size:22px;fill:#202124}.small{font-family:sans-serif;font-size:18px;fill:#62645f}.math{font-family:serif;font-size:22px;fill:#202124}
+    </style>
+  </defs>
+  <rect class="panel" x="20" y="20" width="440" height="390" rx="18"/><rect class="panel" x="500" y="20" width="440" height="390" rx="18"/>
+  <text class="label" x="50" y="62">世界坐标系 W</text><text class="small" x="530" y="62">同一个几何速度向量</text>
+  <line class="axis" x1="105" y1="330" x2="345" y2="330"/><line class="axis" x1="105" y1="330" x2="105" y2="95"/>
+  <text class="math" x="354" y="338">x<tspan baseline-shift="sub" font-size="14">W</tspan></text><text class="math" x="82" y="91">y<tspan baseline-shift="sub" font-size="14">W</tspan></text>
+  <g transform="translate(260 235) rotate(90)"><rect class="body" x="-68" y="-42" width="136" height="84" rx="18"/><circle cx="-43" cy="-49" r="10" fill="#202124"/><circle cx="43" cy="-49" r="10" fill="#202124"/><circle cx="-43" cy="49" r="10" fill="#202124"/><circle cx="43" cy="49" r="10" fill="#202124"/><path d="M24 0h47" stroke="#fff" stroke-width="4" marker-end="url(#arrow)"/></g>
+  <line class="accent" x1="260" y1="235" x2="260" y2="105"/><text class="math" x="278" y="145">v<tspan baseline-shift="sub" font-size="14">W</tspan> = [0, 1]<tspan baseline-shift="super" font-size="14">T</tspan></text>
+  <line x1="560" y1="215" x2="845" y2="215" stroke="#d1cfc7" stroke-width="2" stroke-dasharray="8 8"/>
+  <g transform="translate(650 215) rotate(90)"><rect class="body" x="-68" y="-42" width="136" height="84" rx="18"/><circle cx="-43" cy="-49" r="10" fill="#202124"/><circle cx="43" cy="-49" r="10" fill="#202124"/><circle cx="-43" cy="49" r="10" fill="#202124"/><circle cx="43" cy="49" r="10" fill="#202124"/></g>
+  <line class="axis" x1="650" y1="215" x2="650" y2="90"/><line class="axis" x1="650" y1="215" x2="535" y2="215"/>
+  <text class="math" x="665" y="93">x<tspan baseline-shift="sub" font-size="14">B</tspan></text><text class="math" x="523" y="242">y<tspan baseline-shift="sub" font-size="14">B</tspan></text>
+  <line class="accent" x1="650" y1="215" x2="650" y2="90"/><text class="math" x="690" y="145">v<tspan baseline-shift="sub" font-size="14">B</tspan> = [1, 0]<tspan baseline-shift="super" font-size="14">T</tspan></text>
+  <text class="small" x="535" y="355">机器人朝向世界坐标系的 +y 方向</text><text class="small" x="535" y="383">真实运动未变，只有坐标分量改变</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" role="img" aria-labelledby="title desc">
+  <title id="title">四足机器人运行时数据流</title>
+  <desc id="desc">上层指令经过策略、关节控制和电机驱动机器人，电机反馈与 IMU 数据经过状态构建后重新输入策略。</desc>
+  <defs>
+    <marker id="arrow-dark" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8z" fill="#242525"/></marker>
+    <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8z" fill="#d85d32"/></marker>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8z" fill="#287b96"/></marker>
+    <style>
+      .bg{fill:#f7f6f2;stroke:#c7c5bd;stroke-width:2}.box{fill:#fff;stroke:#858782;stroke-width:2}.core{fill:#242525;stroke:#242525;stroke-width:2}.sensor{fill:#eaf3f5;stroke:#287b96;stroke-width:2}.command{fill:#fbeee8;stroke:#d85d32;stroke-width:2}.label{font-family:sans-serif;font-size:20px;fill:#242525}.label-white{font-family:sans-serif;font-size:20px;fill:#fff}.small{font-family:sans-serif;font-size:16px;fill:#696b67}.arrow{fill:none;stroke:#242525;stroke-width:3;marker-end:url(#arrow-dark)}.forward{fill:none;stroke:#d85d32;stroke-width:4;marker-end:url(#arrow-orange)}.feedback{fill:none;stroke:#287b96;stroke-width:4;marker-end:url(#arrow-blue)}
+    </style>
+  </defs>
+  <rect class="bg" x="18" y="18" width="964" height="664" rx="20"/>
+  <text class="small" x="58" y="57">目标与控制路径</text><line x1="190" y1="51" x2="250" y2="51" class="forward"/>
+  <text class="small" x="684" y="57">状态与反馈路径</text><line x1="820" y1="51" x2="880" y2="51" class="feedback"/>
+
+  <rect class="command" x="80" y="105" width="210" height="76" rx="13"/><text class="label" x="115" y="137">遥控器 / 上层任务</text><text class="small" x="150" y="164">Command</text>
+  <rect class="core" x="395" y="105" width="210" height="76" rx="13"/><text class="label-white" x="470" y="137">Policy</text><text x="461" y="163" font-family="sans-serif" font-size="16" fill="#d8d8d4">策略推理</text>
+  <rect class="box" x="710" y="105" width="210" height="76" rx="13"/><text class="label" x="748" y="137">Joint Controller</text><text class="small" x="765" y="164">关节目标与限幅</text>
+  <path class="forward" d="M290 143H390"/><text class="small" x="312" y="128">Command</text><path class="forward" d="M605 143H705"/><text class="small" x="630" y="128">Action</text>
+
+  <rect class="box" x="710" y="265" width="210" height="76" rx="13"/><text class="label" x="750" y="297">Motor Driver</text><text class="small" x="755" y="324">MotorCommand</text>
+  <rect class="core" x="710" y="425" width="210" height="76" rx="13"/><text class="label-white" x="779" y="457">Robot</text><text x="770" y="483" font-family="sans-serif" font-size="16" fill="#d8d8d4">电机与机构</text>
+  <path class="forward" d="M815 181V260"/><path class="forward" d="M815 341V420"/>
+
+  <rect class="sensor" x="395" y="425" width="210" height="76" rx="13"/><text class="label" x="440" y="457">状态构建 / 估计</text><text class="small" x="455" y="484">RobotState</text>
+  <rect class="sensor" x="80" y="425" width="210" height="76" rx="13"/><text class="label" x="127" y="457">IMU / Sensor</text><text class="small" x="121" y="484">测量值与时间戳</text>
+  <path class="feedback" d="M705 463H610"/><text class="small" x="628" y="447">MotorState</text><path class="feedback" d="M290 463H390"/>
+
+  <rect class="box" x="395" y="575" width="210" height="66" rx="13"/><text class="label" x="415" y="606">Observation Builder</text><text class="small" x="459" y="630">Observation</text>
+  <path class="feedback" d="M500 501V570"/><path class="feedback" d="M395 608H340Q320 608 320 588V230Q320 143 390 143"/>
+
+  <text class="small" x="84" y="661">每条数据都需要明确单位、坐标系、顺序、时间戳与有效性。</text>
+</svg>

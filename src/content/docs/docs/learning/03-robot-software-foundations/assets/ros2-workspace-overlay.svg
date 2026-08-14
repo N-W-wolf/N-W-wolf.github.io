@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="660" viewBox="0 0 1280 660" role="img" aria-labelledby="title desc">
+  <title id="title">ROS 2 工作空间构建与环境叠加</title>
+  <desc id="desc">展示源码由 colcon 构建为 build、install 和 log，并在系统 Humble 环境上加载本地 Overlay。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#222"/></marker>
+    <style>
+      .bg{fill:#f5f3ef}.box{fill:#fff;stroke:#aaa59c;stroke-width:2}.dark{fill:#171717}.title{font-family:sans-serif;font-size:32px;font-weight:700;fill:#111}.label{font-family:sans-serif;font-size:23px;font-weight:600;fill:#181818}.white{font-family:sans-serif;font-size:22px;font-weight:600;fill:#fff}.small{font-family:sans-serif;font-size:18px;fill:#666}.mono{font-family:monospace;font-size:18px;fill:#333}.line{stroke:#222;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1280" height="660"/>
+  <text class="title" x="64" y="64">从源码到可运行的 ROS 2 环境</text>
+
+  <rect class="box" x="64" y="112" width="244" height="178" rx="8"/>
+  <text class="label" x="88" y="152">工作空间源码</text>
+  <text class="mono" x="88" y="194">~/robot_ws/src/</text>
+  <text class="small" x="88" y="232">beginner_ros2</text>
+  <text class="small" x="88" y="262">其他团队 Package</text>
+
+  <path class="line" d="M308 201 H420"/>
+  <rect class="dark" x="420" y="157" width="236" height="88" rx="8"/>
+  <text class="white" x="538" y="192" text-anchor="middle">colcon build</text>
+  <text class="white" x="538" y="222" text-anchor="middle">--symlink-install</text>
+
+  <path class="line" d="M656 201 H760"/>
+  <g transform="translate(760 112)">
+    <rect class="box" width="456" height="178" rx="8"/>
+    <text class="label" x="24" y="40">构建产物</text>
+    <rect x="24" y="66" width="92" height="70" rx="5" fill="#e8e4dd"/><text class="small" x="70" y="107" text-anchor="middle">build/</text>
+    <rect x="128" y="66" width="92" height="70" rx="5" fill="#171717"/><text class="white" x="174" y="107" text-anchor="middle">install/</text>
+    <rect x="232" y="66" width="92" height="70" rx="5" fill="#e8e4dd"/><text class="small" x="278" y="107" text-anchor="middle">log/</text>
+    <text class="small" x="338" y="89">运行时加载</text><text class="small" x="338" y="117">install/</text>
+  </g>
+
+  <text class="label" x="64" y="372">新终端中的环境加载顺序</text>
+  <rect class="box" x="64" y="407" width="500" height="142" rx="8"/>
+  <text class="small" x="88" y="442">1 · Underlay：系统提供的 ROS 2 Humble</text>
+  <text class="mono" x="88" y="482">source /opt/ros/humble/setup.bash</text>
+  <text class="small" x="88" y="521">提供基础工具、接口与系统软件包</text>
+
+  <path class="line" d="M564 478 H678"/>
+  <rect class="box" x="678" y="407" width="538" height="142" rx="8"/>
+  <text class="small" x="702" y="442">2 · Overlay：当前团队工作空间</text>
+  <text class="mono" x="702" y="482">source ~/robot_ws/install/setup.bash</text>
+  <text class="small" x="702" y="521">增加或覆盖本地构建的软件包</text>
+
+  <text class="small" x="64" y="609">修改源码后先重新构建；打开新终端后按 Underlay → Overlay 的顺序加载环境。</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">ROS 2 常用通信接口</title>
+  <desc id="desc">对比 Topic、Service、Action 与 Parameter 的通信关系。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#242424"/>
+    </marker>
+    <style>
+      .bg{fill:#f5f3ef}.panel{fill:#fff;stroke:#c9c5bd;stroke-width:2}.node{fill:#171717}.nodeText{fill:#fff;font-family:sans-serif;font-size:22px;font-weight:600}.title{fill:#141414;font-family:sans-serif;font-size:34px;font-weight:700}.label{fill:#242424;font-family:sans-serif;font-size:22px;font-weight:600}.small{fill:#666;font-family:sans-serif;font-size:18px}.line{stroke:#242424;stroke-width:3;fill:none;marker-end:url(#arrow)}.dash{stroke:#777;stroke-width:2.5;stroke-dasharray:8 8;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect class="bg" width="1280" height="720"/>
+  <text class="title" x="64" y="68">ROS 2 中的四类常用接口</text>
+
+  <g transform="translate(64 105)">
+    <rect class="panel" width="552" height="240" rx="8"/>
+    <text class="label" x="28" y="42">Topic · 持续数据流</text>
+    <rect class="node" x="30" y="88" width="160" height="70" rx="35"/>
+    <text class="nodeText" x="110" y="131" text-anchor="middle">Publisher</text>
+    <rect x="237" y="88" width="110" height="70" rx="5" fill="#e8e4dd" stroke="#777" stroke-width="2"/>
+    <text class="label" x="292" y="131" text-anchor="middle">Topic</text>
+    <rect class="node" x="394" y="88" width="130" height="70" rx="35"/>
+    <text class="nodeText" x="459" y="131" text-anchor="middle">Subscriber</text>
+    <path class="line" d="M190 123 H232"/><path class="line" d="M347 123 H389"/>
+    <text class="small" x="28" y="204">异步发布；一对多；适合状态、传感器与控制指令</text>
+  </g>
+
+  <g transform="translate(664 105)">
+    <rect class="panel" width="552" height="240" rx="8"/>
+    <text class="label" x="28" y="42">Service · 一次请求与响应</text>
+    <rect class="node" x="38" y="88" width="180" height="70" rx="35"/>
+    <text class="nodeText" x="128" y="131" text-anchor="middle">Client</text>
+    <rect class="node" x="334" y="88" width="180" height="70" rx="35"/>
+    <text class="nodeText" x="424" y="131" text-anchor="middle">Server</text>
+    <path class="line" d="M218 108 H328"/><text class="small" x="273" y="96" text-anchor="middle">Request</text>
+    <path class="dash" d="M334 144 H224"/><text class="small" x="279" y="177" text-anchor="middle">Response</text>
+    <text class="small" x="28" y="204">调用者等待结果；适合复位、查询或触发一次操作</text>
+  </g>
+
+  <g transform="translate(64 385)">
+    <rect class="panel" width="552" height="270" rx="8"/>
+    <text class="label" x="28" y="42">Action · 有过程的长任务</text>
+    <rect class="node" x="38" y="100" width="180" height="70" rx="35"/>
+    <text class="nodeText" x="128" y="143" text-anchor="middle">Action Client</text>
+    <rect class="node" x="334" y="100" width="180" height="70" rx="35"/>
+    <text class="nodeText" x="424" y="143" text-anchor="middle">Action Server</text>
+    <path class="line" d="M218 112 H328"/><text class="small" x="273" y="98" text-anchor="middle">Goal</text>
+    <path class="dash" d="M334 136 H224"/><text class="small" x="279" y="162" text-anchor="middle">Feedback</text>
+    <path class="dash" d="M334 164 H224"/><text class="small" x="279" y="196" text-anchor="middle">Result</text>
+    <text class="small" x="28" y="236">可反馈、可取消；适合导航目标与机械臂轨迹</text>
+  </g>
+
+  <g transform="translate(664 385)">
+    <rect class="panel" width="552" height="270" rx="8"/>
+    <text class="label" x="28" y="42">Parameter · 节点配置</text>
+    <rect class="node" x="184" y="86" width="184" height="70" rx="35"/>
+    <text class="nodeText" x="276" y="129" text-anchor="middle">Controller</text>
+    <rect x="156" y="185" width="240" height="42" rx="5" fill="#e8e4dd" stroke="#777" stroke-width="2"/>
+    <text class="small" x="276" y="212" text-anchor="middle">control_rate = 50 Hz</text>
+    <path class="dash" d="M276 181 V161"/>
+    <text class="small" x="28" y="246">属于节点自身；影响节点行为，不替代运行数据流</text>
+  </g>
+</svg>

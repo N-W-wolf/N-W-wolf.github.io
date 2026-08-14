@@ -43,7 +43,7 @@ export default defineConfig({
   },
   integrations: [
     starlight({
-      title: 'N.W.wolf ROBOCON 四足组文档',
+      title: 'N.W.wolf XJTUROBOCON 四足组文档',
       description: '西安交通大学ROBOCON四足组 西北狼战队招新、入门学习与公开文档协作资料。',
       favicon: '/assets/brand/nwwolf-square.svg',
       logo: {

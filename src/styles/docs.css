@@ -67,6 +67,12 @@ header.header {
   border-inline-start-width: 3px;
 }
 
+/* KaTeX defaults first-level scripts to 70% of the base size. With lowercase
+   variables this can make subscripts and superscripts look almost full-size. */
+.sl-markdown-content .katex .msupsub .sizing.reset-size6.size3 {
+  font-size: 0.6em;
+}
+
 .hero .actions {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -110,6 +116,107 @@ header.header {
   font-size: 0.85rem;
   line-height: 1.55;
   text-align: center;
+}
+
+/* Code blocks use three related but distinct visual roles:
+   terminal commands, source code and plain command output. */
+.sl-markdown-content .expressive-code {
+  margin-block: 1.4rem;
+}
+
+.sl-markdown-content .expressive-code .frame {
+  --docs-code-radius: 0.6rem;
+  border-radius: var(--docs-code-radius);
+}
+
+.sl-markdown-content .expressive-code .frame pre {
+  border-radius: var(--docs-code-radius);
+}
+
+/* Shell fences are rendered as terminal frames by Expressive Code. Keep the
+   title bar compact and give empty terminals a useful, consistent label. */
+.sl-markdown-content .expressive-code .frame.is-terminal .header {
+  min-height: 2.35rem;
+  padding-block: 0;
+  border-radius: var(--docs-code-radius) var(--docs-code-radius) 0 0;
+  color: var(--sl-color-gray-2);
+  font-family: var(--sl-font-mono);
+  font-size: 0.73rem;
+  font-weight: 650;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.sl-markdown-content .expressive-code .frame.is-terminal .title:empty::before {
+  content: 'Terminal · Bash';
+}
+
+/* Replace the monochrome masked icon with restrained, recognizable window
+   controls. The circles stay visible in both light and dark themes. */
+.sl-markdown-content .expressive-code .frame.is-terminal .header::before {
+  left: 0.95rem;
+  width: 2.75rem;
+  height: 0.72rem;
+  background:
+    radial-gradient(circle at 0.34rem 50%, #ef6a63 0 0.29rem, transparent 0.31rem),
+    radial-gradient(circle at 1.36rem 50%, #d9a441 0 0.29rem, transparent 0.31rem),
+    radial-gradient(circle at 2.38rem 50%, #58a66a 0 0.29rem, transparent 0.31rem);
+  opacity: 0.9;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.sl-markdown-content .expressive-code .frame.is-terminal pre {
+  border-radius: 0 0 var(--docs-code-radius) var(--docs-code-radius);
+  background: color-mix(in srgb, var(--sl-color-gray-7) 88%, var(--sl-color-accent-low));
+}
+
+/* Untitled non-terminal blocks receive a small language label inside the
+   frame. This separates source code and captured output without requiring
+   authors to add titles to every Markdown fence. */
+.sl-markdown-content .expressive-code .frame:not(.is-terminal):not(.has-title) pre {
+  position: relative;
+}
+
+.sl-markdown-content .expressive-code .frame:not(.is-terminal):not(.has-title) pre::before {
+  position: absolute;
+  inset-block-start: 0.65rem;
+  inset-inline-start: 1rem;
+  content: attr(data-language);
+  color: var(--sl-color-gray-3);
+  font-family: var(--sl-font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.sl-markdown-content .expressive-code .frame:not(.is-terminal):not(.has-title) pre > code {
+  padding-block-start: 2.25rem;
+}
+
+.sl-markdown-content .expressive-code .frame:not(.is-terminal):not(.has-title) pre[data-language='text']::before,
+.sl-markdown-content .expressive-code .frame:not(.is-terminal):not(.has-title) pre[data-language='plaintext']::before,
+.sl-markdown-content .expressive-code .frame:not(.is-terminal):not(.has-title) pre[data-language='txt']::before {
+  content: 'Output';
+}
+
+.sl-markdown-content .expressive-code .frame:not(.is-terminal):not(.has-title) pre[data-language='text'],
+.sl-markdown-content .expressive-code .frame:not(.is-terminal):not(.has-title) pre[data-language='plaintext'],
+.sl-markdown-content .expressive-code .frame:not(.is-terminal):not(.has-title) pre[data-language='txt'] {
+  border-style: dashed;
+  background: color-mix(in srgb, var(--sl-color-gray-7) 72%, transparent);
+}
+
+:root[data-theme='dark'] .sl-markdown-content .expressive-code .frame.is-terminal pre {
+  background: color-mix(in srgb, var(--sl-color-gray-6) 88%, #091014);
+}
+
+:root[data-theme='dark'] .sl-markdown-content .expressive-code .frame:not(.is-terminal):not(.has-title) pre[data-language='text'],
+:root[data-theme='dark'] .sl-markdown-content .expressive-code .frame:not(.is-terminal):not(.has-title) pre[data-language='plaintext'],
+:root[data-theme='dark'] .sl-markdown-content .expressive-code .frame:not(.is-terminal):not(.has-title) pre[data-language='txt'] {
+  background: color-mix(in srgb, var(--sl-color-gray-6) 82%, transparent);
 }
 
 @media (min-width: 72rem) {

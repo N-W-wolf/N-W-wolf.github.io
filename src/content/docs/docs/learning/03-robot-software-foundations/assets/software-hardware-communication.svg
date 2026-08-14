@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 500" role="img" aria-labelledby="title desc">
+  <title id="title">软件模块通信与硬件设备通信</title>
+  <desc id="desc">策略进程通过 IPC、ROS 2 或 Socket 与硬件进程交换结构化数据，硬件进程再通过 CAN 或 RS-485 与电机和传感器通信。</desc>
+  <defs>
+    <marker id="orange" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8z" fill="#d85d32"/></marker>
+    <marker id="blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8z" fill="#287b96"/></marker>
+    <style>
+      .bg{fill:#f7f6f2;stroke:#c7c5bd;stroke-width:2}.box{fill:#fff;stroke:#858782;stroke-width:2}.device{fill:#242525;stroke:#242525;stroke-width:2}.soft{fill:none;stroke:#d85d32;stroke-width:5;marker-start:url(#orange);marker-end:url(#orange)}.hard{fill:none;stroke:#287b96;stroke-width:5;marker-start:url(#blue);marker-end:url(#blue)}.title{font-family:sans-serif;font-size:23px;font-weight:700;fill:#242525}.label{font-family:sans-serif;font-size:19px;fill:#242525}.white{font-family:sans-serif;font-size:19px;fill:#fff}.small{font-family:sans-serif;font-size:16px;fill:#696b67}
+    </style>
+  </defs>
+  <rect class="bg" x="18" y="18" width="944" height="464" rx="20"/>
+  <text class="title" x="68" y="65">软件模块层</text><text class="small" x="68" y="91">传递有类型、有语义的数据结构</text>
+  <rect class="box" x="85" y="135" width="230" height="92" rx="14"/><text class="label" x="139" y="174">Policy Process</text><text class="small" x="143" y="202">Observation / Action</text>
+  <rect class="box" x="380" y="135" width="230" height="92" rx="14"/><text class="label" x="424" y="174">Hardware Process</text><text class="small" x="425" y="202">State / Command</text>
+  <line class="soft" x1="322" y1="181" x2="373" y2="181"/><text class="small" x="315" y="124">IPC / ROS 2 / Socket</text>
+
+  <line x1="68" y1="280" x2="912" y2="280" stroke="#c7c5bd" stroke-width="2" stroke-dasharray="8 8"/>
+  <text class="title" x="68" y="327">硬件设备层</text><text class="small" x="68" y="353">传递协议帧、寄存器与总线数据</text>
+  <rect class="device" x="690" y="122" width="205" height="118" rx="14"/><text class="white" x="731" y="166">下位控制器</text><text x="731" y="194" font-family="sans-serif" font-size="16" fill="#d8d8d4">可选的系统边界</text><text x="731" y="218" font-family="sans-serif" font-size="16" fill="#d8d8d4">高频控制 / 保护</text>
+  <line class="soft" x1="617" y1="181" x2="683" y2="181"/><text class="small" x="628" y="156">网络</text>
+  <rect class="device" x="380" y="372" width="230" height="74" rx="14"/><text class="white" x="441" y="416">Motor / IMU</text>
+  <path class="hard" d="M793 247V330Q793 409 617 409"/><text class="small" x="670" y="393">CAN / RS-485 / Serial</text>
+  <text class="small" x="68" y="414">软件通信方式不会自动定义电机协议；</text><text class="small" x="68" y="441">设备总线也不会自动形成 RobotState。</text>
+</svg>

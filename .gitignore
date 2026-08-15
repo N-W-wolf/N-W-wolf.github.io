@@ -6,6 +6,7 @@ dist/
 .astro/
 .cache/
 *.tsbuildinfo
+exports/
 
 # --- Environment ---
 .env

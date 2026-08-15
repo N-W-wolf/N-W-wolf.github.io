@@ -538,4 +538,4 @@ Turtlesim 很简单，但使用的观察方法可以直接迁移到四足项目�
 - [ROS 2 Humble 官方 Beginner: Client libraries](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries.html)：继续学习 Python 或 C++ 节点、接口与软件包开发。
 - [Topic、Service 与 Action 的适用场景](https://docs.ros.org/en/humble/How-To-Guides/Topics-Services-Actions.html)：进一步理解三类通信接口的设计边界。
 
-学习这一章后，希望大家能够在 Ubuntu 22.04 与 Humble 中独立完成以下操作：启动节点，找到输入和输出，解释消息字段，手工发布测试数据，调用 Service 与 Action，修改参数，构建并加载工作空间，运行自己的节点，检查 Launch 产生的系统，以及记录和回放一次实验。做到这些以后，ROS 2 才从概念变成了可以参与机器人项目的工具。
+学习这一章后，应能够在 Ubuntu 22.04 与 Humble 中独立完成以下操作：启动节点，找到输入和输出，解释消息字段，手工发布测试数据，调用 Service 与 Action，修改参数，构建并加载工作空间，运行自己的节点，检查 Launch 产生的系统，以及记录和回放一次实验。做到这些以后，ROS 2 才从概念变成了可以参与机器人项目的工具。

@@ -9,8 +9,6 @@ const targetRoot = join(
   projectRoot,
   'src/content/docs/docs/learning/04-quadruped-rl-simulation/04-advanced-theory',
 );
-const sourceSite = 'https://www.qinshiyue.icu/';
-
 const articles = [
   { source: 'Bellman', file: '01-bellman.md', label: '贝尔曼方程' },
   { source: 'DynamicPlan', file: '02-dynamic-programming.md', label: '动态规划' },
@@ -42,6 +40,14 @@ function splitDocument(source, sourceFile) {
   return { frontmatter: match[1], body: match[2].trim() };
 }
 
+function normalizeStrongSpacing(markdown) {
+  return markdown.replace(
+    /([^\s]?)\*\*([^\n]*?)\*\*([^\s]?)/g,
+    (_, before, content, after) =>
+      `${before ? `${before} ` : ''}**${content}**${after ? ` ${after}` : ''}`,
+  );
+}
+
 async function directoryExists(path) {
   try {
     return (await stat(path)).isDirectory();
@@ -60,11 +66,12 @@ for (const [index, article] of articles.entries()) {
   const updatedAt = (readScalar(frontmatter, 'lastmod') || readScalar(frontmatter, 'date')).slice(0, 10);
   const draft = readScalar(frontmatter, 'draft') === 'true';
   const assetDirectory = article.file.replace(/\.md$/, '');
-  const body = originalBody.replace(
-    /(!\[[^\]]*\]\()(?:\.\/)?assets\//g,
-    `$1./assets/${assetDirectory}/`,
+  const body = normalizeStrongSpacing(
+    originalBody.replace(
+      /(!\[[^\]]*\]\()(?:\.\/)?assets\//g,
+      `$1./assets/${assetDirectory}/`,
+    ),
   );
-  const sourceNotice = `> **来源与同步说明：** 本文同步自作者个人博客[“秦时月”](${sourceSite})。个人博客与本网站将并行维护，后续更新会继续同步到本文档中心。`;
   const output = [
     '---',
     `title: ${JSON.stringify(title)}`,
@@ -75,8 +82,6 @@ for (const [index, article] of articles.entries()) {
     `  label: ${JSON.stringify(article.label)}`,
     `  order: ${index + 2}`,
     '---',
-    '',
-    sourceNotice,
     '',
     body,
     '',

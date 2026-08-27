@@ -7,7 +7,7 @@ const defaultSourceRoot = '/media/windnotebook/Software and Files1/myBlog/conten
 const sourceRoot = resolve(process.argv[2] || defaultSourceRoot);
 const targetRoot = join(
   projectRoot,
-  'src/content/docs/docs/learning/04-quadruped-rl-simulation/04-advanced-theory',
+  'src/content/docs/docs/learning/04-quadruped-rl-simulation/05-advanced-theory',
 );
 const articles = [
   { source: 'Bellman', file: '01-bellman.md', label: '贝尔曼方程' },

@@ -109,19 +109,24 @@ export default defineConfig({
                   items: [{ autogenerate: { directory: 'docs/learning/04-quadruped-rl-simulation/01-core-concepts' } }],
                 },
                 {
-                  label: '训练与仿真',
+                  label: '仿真与任务构建',
                   collapsed: true,
-                  items: [{ autogenerate: { directory: 'docs/learning/04-quadruped-rl-simulation/02-simulation-training' } }],
+                  items: [{ autogenerate: { directory: 'docs/learning/04-quadruped-rl-simulation/02-simulation-task-building' } }],
+                },
+                {
+                  label: '策略训练',
+                  collapsed: true,
+                  items: [{ autogenerate: { directory: 'docs/learning/04-quadruped-rl-simulation/03-policy-training' } }],
                 },
                 {
                   label: '泛化与迁移',
                   collapsed: true,
-                  items: [{ autogenerate: { directory: 'docs/learning/04-quadruped-rl-simulation/03-generalization-transfer' } }],
+                  items: [{ autogenerate: { directory: 'docs/learning/04-quadruped-rl-simulation/04-generalization-transfer' } }],
                 },
                 {
                   label: '强化学习理论进阶 *',
                   collapsed: true,
-                  items: [{ autogenerate: { directory: 'docs/learning/04-quadruped-rl-simulation/04-advanced-theory' } }],
+                  items: [{ autogenerate: { directory: 'docs/learning/04-quadruped-rl-simulation/05-advanced-theory' } }],
                 },
               ],
             },
